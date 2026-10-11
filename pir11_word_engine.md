@@ -11,7 +11,7 @@ The **PIR11 Word Engine** serves as the lowest-level execution unit in this arch
 
 In the context of this codebase, a **word** is defined as a single 64-bit unsigned integer (`uint64_t`). The Word Engine is fundamentally responsible for how the processor ingests, processes, and filters these individual 64-bit words before the intermediate results are accumulated at the page level.
 
-Within PIR system, the structural hierarchy and division of labor operate as follows:
+Within the PIR system, the structural hierarchy and division of labor operate as follows:
 
 ### 1. Data Type: Defining the "Word"
 The database page (`PAGE_SIZE_BYTES = 4096` bytes) is segmented into exactly 512 individual 64-bit words (`WORDS_PER_PAGE`). The Word Engine operates strictly at this granularity: it processes data by moving a single 64-bit register value into the execution pipeline at a time.
